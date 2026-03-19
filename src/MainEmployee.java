@@ -13,7 +13,7 @@ public class MainEmployee {
         ep.name = sc.nextLine();
 
         System.out.print("Gross Salary: ");
-        ep.grossSalary = sc.nextDouble();
+        ep.setGrossSalary(sc.nextDouble());
 
         System.out.print("Tax: ");
         ep.tax = sc.nextDouble();
