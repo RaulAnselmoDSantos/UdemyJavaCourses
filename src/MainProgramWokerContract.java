@@ -5,6 +5,8 @@ import entities.enums.WorkerLevel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
@@ -13,7 +15,7 @@ public class MainProgramWokerContract {
     public static void main(String[] args) throws ParseException {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         System.out.print("Enter with the name of Department: ");
         String departmentName = sc.nextLine();
@@ -31,16 +33,16 @@ public class MainProgramWokerContract {
 
         System.out.print("How many contracts to this worker? ");
         int numberOfContracts = sc.nextInt();
-        for(int i = 0; i < numberOfContracts; i++) {
+        for(int i = 1; i <= numberOfContracts; i++) {
             System.out.println("Enter the contract #" + i + " data:");
             System.out.print("Date (DD/MM/YYYY): ");
-            Date ContractDate = sdf.parse(sc.nextLine());
+            LocalDate contractDate = LocalDate.parse(sc.next(), fmt);
             System.out.print("Value per Hour: ");
             double valuePerHour = sc.nextDouble();
             System.out.print("Duration (hours): ");
             int durationHours = sc.nextInt();
 
-            HoursContract hoursContract = new HoursContract(ContractDate, valuePerHour, durationHours);
+            HoursContract hoursContract = new HoursContract(contractDate, valuePerHour, durationHours);
             wk.addContract(hoursContract);
         }
 
@@ -53,7 +55,7 @@ public class MainProgramWokerContract {
 
         System.out.println("Name: " + wk.getName());
         System.out.println("Department: " + wk.getDepartment().getName());
-        System.out.printf("Income for " + mouthAndYear + ": " + String.format("%2f", wk.income(mouth, year)));
+        System.out.printf("Income for " + mouthAndYear + ": " + String.format("%2f", wk.income(year, mouth)));
 
         sc.close();
     }
