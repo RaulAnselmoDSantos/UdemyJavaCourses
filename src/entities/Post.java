@@ -1,12 +1,16 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Post {
     private Date date;
     private String title;
     private String content;
     private Integer likes;
+
+    private List<Comment> comments = new ArrayList<>();
 
     public Post(){}
     public Post(Date date, String title, String content, Integer likes) {
@@ -46,5 +50,17 @@ public class Post {
 
     public void setLikes(Integer likes) {
         this.likes = likes;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void addComments(Comment comments) {
+        this.comments.add(comments);
+    }
+
+    public void removeComments(Comment comment) {
+        this.comments.remove(comment);
     }
 }
