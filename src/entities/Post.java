@@ -1,5 +1,6 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,6 +20,8 @@ public class Post {
         this.content = content;
         this.likes = likes;
     }
+
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public Date getDate() {
         return date;
@@ -62,5 +65,19 @@ public class Post {
 
     public void removeComments(Comment comment) {
         this.comments.remove(comment);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n");
+        sb.append(title).append("\n");
+        sb.append(likes).append(" likes -").append(sdf.format(date)).append("\n");
+        sb.append(content).append("\n");
+        sb.append("Comments :").append("\n");
+        for (Comment comment : comments) {
+            sb.append(comment.toString()).append("\n");
+        }
+        return sb.toString();
     }
 }
