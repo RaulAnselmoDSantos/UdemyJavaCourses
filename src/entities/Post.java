@@ -13,7 +13,7 @@ public class Post {
 
     private List<Comment> comments = new ArrayList<>();
 
-    private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
     public Post(){}
     public Post(Date date, String title, String content, Integer likes) {
@@ -72,7 +72,7 @@ public class Post {
         StringBuilder sb = new StringBuilder();
         sb.append("\n");
         sb.append(title).append("\n");
-        sb.append(likes).append(" likes -").append(sdf.format(date)).append("\n");
+        sb.append(likes).append(" likes - ").append(sdf.format(date)).append("\n");
         sb.append(content).append("\n");
         sb.append("Comments :").append("\n");
         for (Comment comment : comments) {
