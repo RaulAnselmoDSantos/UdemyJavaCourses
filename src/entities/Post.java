@@ -13,6 +13,8 @@ public class Post {
 
     private List<Comment> comments = new ArrayList<>();
 
+    private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     public Post(){}
     public Post(Date date, String title, String content, Integer likes) {
         this.date = date;
@@ -20,8 +22,6 @@ public class Post {
         this.content = content;
         this.likes = likes;
     }
-
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public Date getDate() {
         return date;
