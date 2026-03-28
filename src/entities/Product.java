@@ -6,6 +6,21 @@ public class Product {
     public double price;
     public int quantity;
 
+    //Still public Here because wu need for another exercise
+    public Product() {
+    }
+
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public Product(String name, double price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
     public String getName() {
         return name;
     }
@@ -36,7 +51,7 @@ public class Product {
 
     public void AddProducts(int qAdd){
         if(qAdd < 0){
-            System.out.println("Não pode ser minor que zero");
+            System.out.println("Can't be minor than zero");
             return;
         }
         int amount = getQuantity();
@@ -47,7 +62,7 @@ public class Product {
 
     public void RemoveProducts(int qAdd){
         if(qAdd < 0){
-            System.out.println("Não pode ser minor que zero");
+            System.out.println("Can't be minor than zero");
             return;
         }
         int amount = getQuantity();
@@ -58,10 +73,11 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product data:" +
-                "name='" + name + '\'' +
-                ", price= $" + String.format("%.2f", price) +
-                ", quantity=" + quantity + " units" +
-                ", Total:= $" + TotalValueInStock();
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: " + name);
+        sb.append("Current price: " + String.format("%.2f", price));
+        sb.append("Current quantity: " + quantity + " units");
+        sb.append("Total price: " + TotalValueInStock());
+        return sb.toString();
     }
 }
