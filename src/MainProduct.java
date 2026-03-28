@@ -6,6 +6,7 @@ public class MainProduct {
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
+        //Here we use a public constructor fow this exercise
         Product p1 = new Product();
 
         System.out.println("Enter product data:");
