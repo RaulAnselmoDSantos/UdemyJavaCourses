@@ -26,4 +26,11 @@ public class BusinessAccount extends Account {
             balance += amount - 10.00;
         }
     }
+
+    @Override
+    public void withdraw(Double amount) {
+        //Using the method withdraw of the superclass with super notation
+        super.withdraw(amount);
+        balance -= 2.00;
+    }
 }
