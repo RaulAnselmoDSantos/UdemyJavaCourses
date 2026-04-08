@@ -52,17 +52,37 @@ public class Employee {
         this.id = id;
     }
 
+    public Integer getHours() {
+        return hours;
+    }
+
+    public void setHours(Integer hours) {
+        this.hours = hours;
+    }
+
+    public Double getValuePerHour() {
+        return valuePerHour;
+    }
+
+    public void setValuePerHour(Double valuePerHour) {
+        this.valuePerHour = valuePerHour;
+    }
+
     public double nextSalary(){
         return grossSalary - tax;
     }
 
-    public void increseSalary(double percentage){
+    public void increaseSalary(double percentage){
         grossSalary += grossSalary*(percentage/100);
         System.out.println("Update: " + toString());
     }
 
     public void setGrossSalary(double grossSalary) {
         this.grossSalary = grossSalary;
+    }
+
+    public Double payment(){
+        return (hours *  valuePerHour);
     }
 
     @Override

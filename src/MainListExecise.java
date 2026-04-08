@@ -40,7 +40,7 @@ public class MainListExecise {
                 .findFirst()
                 .orElse(null);
         if (emp != null) {
-            emp.increseSalary(percentage);
+            emp.increaseSalary(percentage);
         } else {
             System.out.println("Employee not found, Id does not found!");
         }

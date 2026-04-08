@@ -21,7 +21,7 @@ public class MainEmployee {
         System.out.println(ep);
 
         System.out.print("Which percentage to increase salary? ");
-        ep.increseSalary(sc.nextDouble());
+        ep.increaseSalary(sc.nextDouble());
 
     }
 }
