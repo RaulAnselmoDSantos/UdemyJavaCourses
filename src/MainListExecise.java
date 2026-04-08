@@ -36,7 +36,7 @@ public class MainListExecise {
         System.out.println("Enter the percentage");
         int percentage = sc.nextInt();
         Employee emp =  employees.stream()
-                .filter( s -> s.id == idTarget)
+                .filter( s -> s.getId() == idTarget)
                 .findFirst()
                 .orElse(null);
         if (emp != null) {

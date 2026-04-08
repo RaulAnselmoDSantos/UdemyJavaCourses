@@ -10,13 +10,13 @@ public class MainEmployee {
         System.out.println("Enter with the employee data: ");
 
         System.out.print("Name: ");
-        ep.name = sc.nextLine();
+        ep.setName(sc.nextLine());
 
         System.out.print("Gross Salary: ");
         ep.setGrossSalary(sc.nextDouble());
 
         System.out.print("Tax: ");
-        ep.tax = sc.nextDouble();
+        ep.setTax(sc.nextDouble());
 
         System.out.println(ep);
 

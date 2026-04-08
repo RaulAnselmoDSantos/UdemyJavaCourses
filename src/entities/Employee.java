@@ -1,10 +1,15 @@
 package entities;
 
 public class Employee {
-    public String name;
-    double grossSalary;
-    public double tax;
-    public int id;
+    private String name;
+    private double grossSalary;
+    private double tax;
+    private int id;
+    private Integer hours;
+    private Double valuePerHour;
+
+    public Employee() {
+    }
 
     public Employee(int id, String name, double grossSalary){
         this.id = id;
@@ -12,8 +17,39 @@ public class Employee {
         this.grossSalary = grossSalary;
     }
 
-    public Employee(){
-        super();
+    //For the exercise of Polymorphism
+    public Employee(String name, Integer hours, Double valuePerHour) {
+        this.name = name;
+        this.hours = hours;
+        this.valuePerHour = valuePerHour;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getGrossSalary() {
+        return grossSalary;
+    }
+
+    public double getTax() {
+        return tax;
+    }
+
+    public void setTax(double tax) {
+        this.tax = tax;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public double nextSalary(){
