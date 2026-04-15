@@ -10,6 +10,7 @@ public class Product {
     public Product() {
     }
 
+    //For the Heritage and Polymorph exercise
     public Product(String name, double price) {
         this.name = name;
         this.price = price;
@@ -71,7 +72,12 @@ public class Product {
         System.out.println(toString());
     }
 
-    @Override
+    public String priceTag(String tag){
+        StringBuilder sb = new StringBuilder();
+        sb.append(name).append("$ ").append(price);
+        return sb.toString();
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Name: " + name);
