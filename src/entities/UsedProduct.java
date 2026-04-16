@@ -1,6 +1,5 @@
 package entities;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -12,8 +11,13 @@ public class UsedProduct extends Product{
     public UsedProduct() {
     }
 
-    public Date getManufactureDate() {
-        return manufactureDate;
+    public UsedProduct(String name, double price, Date manufactureDate) {
+        super(name, price);
+        this.manufactureDate = manufactureDate;
+    }
+
+    public String getManufactureDate() {
+        return dateFormat.format(manufactureDate);
     }
 
     public void setManufactureDate(Date manufactureDate) {
@@ -21,9 +25,9 @@ public class UsedProduct extends Product{
     }
 
     @Override
-    public String priceTag(String tag){
+    public String priceTag(){
         StringBuilder sb = new StringBuilder();
-        sb.append(name).append(" (used) $ ").append(price).append("(Manufacture date: " + getManufactureDate() + ")");
+        sb.append(name).append(" (used) $ ").append(price).append(" (Manufacture date: " + getManufactureDate() + ")");
         return sb.toString();
     }
 }

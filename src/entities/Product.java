@@ -72,7 +72,7 @@ public class Product {
         System.out.println(toString());
     }
 
-    public String priceTag(String tag){
+    public String priceTag(){
         StringBuilder sb = new StringBuilder();
         sb.append(name).append("$ ").append(price);
         return sb.toString();
