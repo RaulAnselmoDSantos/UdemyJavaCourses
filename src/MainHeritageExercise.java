@@ -5,7 +5,8 @@ import entities.SavingsAccount;
 public class MainHeritageExercise {
     public static void main(String[] args){
 
-        Account acc = new Account(1001, "Alex", 0.0);
+        //For the Abstract exercises just comment the call of the super class.
+        //Account acc = new Account(1001, "Alex", 0.0);
 
         BusinessAccount bacc = new BusinessAccount(1002, "Maria", 0.0, 500.00);
 
