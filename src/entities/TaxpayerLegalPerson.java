@@ -1,6 +1,6 @@
 package entities;
 
-public class TaxpayerLegalPerson extends Taxpayer {
+public final class TaxpayerLegalPerson extends Taxpayer {
     private Integer nEmployees;
 
     public TaxpayerLegalPerson() {
