@@ -13,8 +13,10 @@ public class MainTryCatchExemple {
         //For witch type of exception possíble we make a catch
         }catch(InputMismatchException e){
             System.out.println("Please enter a number");
+            e.printStackTrace();
         }catch(ArrayIndexOutOfBoundsException e){
             System.out.println("Invalid position");
+            e.printStackTrace();
         }
 
         sc.close();
