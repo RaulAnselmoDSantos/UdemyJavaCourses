@@ -1,4 +1,4 @@
-package entities;
+package Model.entities;
 
 public abstract class Taxpayer {
     private String name;

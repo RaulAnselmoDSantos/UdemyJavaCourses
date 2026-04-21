@@ -1,8 +1,8 @@
-import entities.Client;
-import entities.Order;
-import entities.OrderItem;
-import entities.Product;
-import entities.enums.OrderStatus;
+import Model.entities.Client;
+import Model.entities.Order;
+import Model.entities.OrderItem;
+import Model.entities.Product;
+import Model.enums.OrderStatus;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

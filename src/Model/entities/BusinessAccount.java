@@ -1,4 +1,4 @@
-package entities;
+package Model.entities;
 
 public class BusinessAccount extends Account {
 

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import entities.Rectangle;
+import Model.entities.Rectangle;
 
 public class MainRectangle {
     public static void main(String[] args){

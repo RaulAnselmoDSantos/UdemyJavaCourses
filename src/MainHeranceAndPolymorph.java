@@ -1,6 +1,6 @@
-import entities.Taxpayer;
-import entities.TaxpayerLegalPerson;
-import entities.TaxpayerNaturalPerson;
+import Model.entities.Taxpayer;
+import Model.entities.TaxpayerLegalPerson;
+import Model.entities.TaxpayerNaturalPerson;
 
 import java.util.ArrayList;
 import java.util.List;

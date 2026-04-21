@@ -1,6 +1,6 @@
 import java.util.Locale;
 import java.util.Scanner;
-import entities.Triangle;
+import Model.entities.Triangle;
 
 /*
 * Atividade: Orientação a Objetos

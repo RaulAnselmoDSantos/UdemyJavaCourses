@@ -1,4 +1,4 @@
-package entities;
+package Model.entities;
 
 public final class ImportedProduct extends Product{
     private Double customsFree;

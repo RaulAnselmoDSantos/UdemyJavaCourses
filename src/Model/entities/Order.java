@@ -1,6 +1,6 @@
-package entities;
+package Model.entities;
 
-import entities.enums.OrderStatus;
+import Model.enums.OrderStatus;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

@@ -1,7 +1,6 @@
-import entities.Order;
-import entities.enums.OrderStatus;
+import Model.entities.Order;
+import Model.enums.OrderStatus;
 
-import java.sql.SQLOutput;
 import java.util.Date;
 
 public class MainEnumsExemple {

@@ -1,7 +1,7 @@
-import entities.Circle;
-import entities.Rectangle;
-import entities.Shape;
-import entities.enums.Color;
+import Model.entities.Circle;
+import Model.entities.Rectangle;
+import Model.entities.Shape;
+import Model.enums.Color;
 
 import java.util.ArrayList;
 import java.util.List;

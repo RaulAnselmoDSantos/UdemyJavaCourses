@@ -1,4 +1,4 @@
-package entities;
+package Model.entities;
 
 public class OrderItem {
     private Integer quantity;

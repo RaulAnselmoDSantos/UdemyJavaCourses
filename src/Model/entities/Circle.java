@@ -1,6 +1,6 @@
-package entities;
+package Model.entities;
 
-import entities.enums.Color;
+import Model.enums.Color;
 
 public class Circle extends Shape {
     private Double radius;

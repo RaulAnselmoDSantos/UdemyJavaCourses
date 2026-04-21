@@ -1,4 +1,4 @@
-package entities;
+package Model.entities;
 
 public final class OutsoircedEmployee extends Employee {
     private Double additionalCharge;

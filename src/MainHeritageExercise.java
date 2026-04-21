@@ -1,6 +1,6 @@
-import entities.Account;
-import entities.BusinessAccount;
-import entities.SavingsAccount;
+import Model.entities.Account;
+import Model.entities.BusinessAccount;
+import Model.entities.SavingsAccount;
 
 public class MainHeritageExercise {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package entities;
+package Model.entities;
 
 public final class TaxpayerLegalPerson extends Taxpayer {
     private Integer nEmployees;

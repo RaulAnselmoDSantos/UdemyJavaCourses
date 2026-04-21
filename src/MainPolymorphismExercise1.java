@@ -1,5 +1,5 @@
-import entities.Employee;
-import entities.OutsoircedEmployee;
+import Model.entities.Employee;
+import Model.entities.OutsoircedEmployee;
 
 import java.util.ArrayList;
 import java.util.List;
