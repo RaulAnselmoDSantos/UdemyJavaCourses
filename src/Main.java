@@ -10,6 +10,18 @@ public class Main {
             //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
             // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("i = " + i);
+            /* makes the "if" just keep going in the case of i equals of the value
+               using the key word "continue"
+            */
+            if(i == 2) continue;
+
+            /* makes the "if" just stop the for loop in the case of i equals of the
+               value
+               using the key word "break"
+            */
+            if(i == 5) break;
         }
+
+
     }
 }
