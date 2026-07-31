@@ -1,5 +1,7 @@
 package entities;
 
+import domain.GenerecDomain;
+
 import java.util.Objects;
 
 public class ClientDomain implements GenerecDomain<String> {

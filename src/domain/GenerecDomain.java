@@ -1,4 +1,4 @@
-package entities;
+package domain;
 
 public interface GenerecDomain<T> {
 

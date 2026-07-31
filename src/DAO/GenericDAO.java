@@ -1,6 +1,6 @@
 package DAO;
 
-import entities.GenerecDomain;
+import domain.GenerecDomain;
 
 import java.util.ArrayList;
 import java.util.Arrays;

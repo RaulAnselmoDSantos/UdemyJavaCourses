@@ -2,7 +2,7 @@ import DAO.ClientDAO;
 import DAO.GenericDAO;
 import DAO.UserDAO;
 import entities.ClientDomain;
-import entities.UserDomain;
+import domain.UserDomain;
 
 public class MainDAO {
 
