@@ -1,5 +1,5 @@
-import Model.entities.Order;
-import Model.enums.OrderStatus;
+import entities.Order;
+import enums.OrderStatus;
 
 import java.util.Date;
 

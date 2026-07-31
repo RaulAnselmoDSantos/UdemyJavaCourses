@@ -1,4 +1,4 @@
-import Model.enums.EnumOperation;
+import enums.EnumOperation;
 
 import java.util.Scanner;
 

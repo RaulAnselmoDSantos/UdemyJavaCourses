@@ -1,6 +1,6 @@
-import Model.entities.ImportedProduct;
-import Model.entities.Product;
-import Model.entities.UsedProduct;
+import entities.ImportedProduct;
+import entities.Product;
+import entities.UsedProduct;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

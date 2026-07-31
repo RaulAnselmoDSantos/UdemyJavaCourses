@@ -1,5 +1,5 @@
-import Model.entities.Comment;
-import Model.entities.Post;
+import entities.Comment;
+import entities.Post;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

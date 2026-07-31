@@ -1,8 +1,8 @@
-import Model.DAO.ClientDAO;
-import Model.DAO.GenericDAO;
-import Model.DAO.UserDAO;
-import Model.entities.ClientDomain;
-import Model.entities.UserDomain;
+import DAO.ClientDAO;
+import DAO.GenericDAO;
+import DAO.UserDAO;
+import entities.ClientDomain;
+import entities.UserDomain;
 
 public class MainDAO {
 

@@ -1,4 +1,4 @@
-import Model.entities.ProcessadorTarefa;
+import entities.ProcessadorTarefa;
 
 public class MainThreadsExemple {
     public static void main(String[] args) {

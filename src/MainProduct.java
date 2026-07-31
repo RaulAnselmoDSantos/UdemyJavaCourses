@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-import Model.entities.Product;
+import entities.Product;
 
 public class MainProduct {
     public static void main(String[] args){

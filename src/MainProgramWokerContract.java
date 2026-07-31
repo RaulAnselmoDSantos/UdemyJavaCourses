@@ -1,7 +1,7 @@
-import Model.entities.Department;
-import Model.entities.HoursContract;
-import Model.entities.Worker;
-import Model.enums.WorkerLevel;
+import entities.Department;
+import entities.HoursContract;
+import entities.Worker;
+import enums.WorkerLevel;
 
 import java.text.ParseException;
 import java.time.LocalDate;

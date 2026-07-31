@@ -1,5 +1,5 @@
-import Model.entities.Reservation;
-import Model.exception.DomainException;
+import entities.Reservation;
+import exception.DomainException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

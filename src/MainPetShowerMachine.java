@@ -1,5 +1,5 @@
-import Model.entities.Pet;
-import Model.entities.PetMachine;
+import entities.Pet;
+import entities.PetMachine;
 
 import java.util.Scanner;
 

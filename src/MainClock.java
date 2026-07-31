@@ -1,6 +1,6 @@
-import Model.entities.Clock;
-import Model.entities.Clock12HoursFormat;
-import Model.entities.Clock24HoursFormat;
+import entities.Clock;
+import entities.Clock12HoursFormat;
+import entities.Clock24HoursFormat;
 
 public class MainClock {
 

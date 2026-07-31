@@ -1,4 +1,4 @@
-import Model.entities.People;
+import entities.People;
 
 import java.util.Scanner;
 
