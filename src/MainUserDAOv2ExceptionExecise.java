@@ -2,11 +2,17 @@
 import DAO.UserDAOv2;
 import Model.UserModel;
 import enums.MenuAccountOptions;
+import exception.EmptyStorageException;
+import exception.UserNotFoundException;
+import exception.validatorException;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import static validator.UserValidator.verifyModel;
 
 public class MainUserDAOv2ExceptionExecise {
 
@@ -29,7 +35,16 @@ public class MainUserDAOv2ExceptionExecise {
         return builder.toString();
     }
 
-    public static UserModel requestUserCREATE(){
+    private static UserModel validateInputs(long id,
+                                            String name,
+                                            String email,
+                                            LocalDate birthdate) throws validatorException {
+        UserModel user = new UserModel(id, name, email, birthdate);
+        verifyModel(user);
+        return user;
+    }
+
+    public static UserModel requestUserCREATE() throws validatorException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         long id = 0;
         System.out.println("Type the name of the User: ");
@@ -41,10 +56,10 @@ public class MainUserDAOv2ExceptionExecise {
 
         LocalDate birthdate =  LocalDate.parse(birthdateStr, formatter);
 
-        return new UserModel(id, name, email, birthdate);
+        return validateInputs(id, name, email, birthdate);
     }
 
-    public static UserModel requestUserUPDATE(){
+    public static UserModel requestUserUPDATE() throws validatorException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         System.out.println("Type the ID of the User: ");
         long id = sc.nextInt();
@@ -57,7 +72,7 @@ public class MainUserDAOv2ExceptionExecise {
 
         LocalDate birthdate =  LocalDate.parse(birthdateStr, formatter);
 
-        return new UserModel(id, name, email, birthdate);
+        return validateInputs(id, name, email, birthdate);
     }
 
     public static long requestUserId(){
@@ -78,30 +93,60 @@ public class MainUserDAOv2ExceptionExecise {
             switch (selectedOption) {
                 //Opção 1 - Register
                 case CREATE -> {
-                    System.out.println("Saving User");
-                    dao.save(requestUserCREATE());
+                    try{
+                        System.out.println("Saving User");
+                        dao.save(requestUserCREATE());
+                    }catch (validatorException ex){
+                        System.out.println(ex.getMessage());
+                        ex.printStackTrace();
+                    }
                 }
                 //Opção 2 - Update Account
                 case UPDATE -> {
-                    System.out.println("Updating User");
-                    dao.update(requestUserUPDATE());
+                    try{
+                        System.out.println("Updating User");
+                        dao.update(requestUserUPDATE());
+                    }catch (UserNotFoundException | EmptyStorageException ex){
+                        System.out.println(ex.getMessage());
+                    }catch (validatorException ex){
+                        System.out.println(ex.getMessage());
+                        ex.printStackTrace();
+                    }
                 }
                 //Opção 3 - Delete Account
                 case DELETE -> {
-                    System.out.println("Deleting User");
-                    dao.deleteById(requestUserId());
+                    try{
+                        System.out.println("Deleting User");
+                        dao.deleteById(requestUserId());
+                    }catch (UserNotFoundException | EmptyStorageException ex){
+                        System.out.println(ex.getMessage());
+                        sc.nextLine();
+                    }catch (InputMismatchException  ex){
+                        System.out.println("Type only numbers");
+                        sc.nextLine();
+                    }finally {
+                        System.out.println("====================================");
+                    }
                 }
                 //Opção 4 - Find by Identify Number
                 case FIND_BY_ID -> {
-                    System.out.println("Finding User");
-                    var user = dao.findById(requestUserId());
-                    System.out.println(user);
+                    try{
+                        System.out.println("Finding User");
+                        var user = dao.findById(requestUserId());
+                        System.out.println(user);
+                    }catch (UserNotFoundException | EmptyStorageException ex){
+                        System.out.println(ex.getMessage());
+                    }
                 }
                 //Opção 5 - List All
                 case FIND_ALL -> {
-                    System.out.println("Listing Users");
-                    var users = dao.findAll();
-                    users.forEach(System.out::println);
+                    try{
+                        System.out.println("Listing Users");
+                        var users = dao.findAll();
+                        users.forEach(System.out::println);
+                    }catch (EmptyStorageException ex){
+                        System.out.println(ex.getMessage());
+                    }
                 }
                 //Opção 0 - Leave
                 case EXIT -> {

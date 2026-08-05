@@ -1,9 +1,9 @@
 package DAO;
 
 import Model.UserModel;
+import exception.EmptyStorageException;
 import exception.UserNotFoundException;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +40,19 @@ public class UserDAOv2 {
 
     public List<UserModel> findAll(){
         System.out.println("Listing all users");
-        return models;
+        List<UserModel> result;
+        try{
+            verifyStorage();
+            result = models;
+        }catch(EmptyStorageException ex){
+            ex.printStackTrace();
+            result = new  ArrayList<>();
+        }
+        return result;
+    }
+
+    public void verifyStorage(){
+        if (models.isEmpty()) throw new EmptyStorageException("The Storage is empty");
     }
 
 }
